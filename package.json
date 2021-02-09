@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r sucrase/register src/main/index.js -i 15",
     "start:dev": "nodemon --exec sucrase-node src/main/index.js",
-    "test": "jest --forceExit",
+    "test": "NODE_ENV=development jest --forceExit",
     "knex": "knex",
     "migration:make": "knex migrate:make",
     "migration:latest": "knex migrate:latest",
