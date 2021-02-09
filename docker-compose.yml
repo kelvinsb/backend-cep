@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  database:
+    container_name: database
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DATABASE_DB_NAME}
+      - MYSQL_USER=${DATABASE_USER}
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+  # web:
+  #   container_name: busca_cep
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 3000:3000
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD}
+  #     - MYSQL_DATABASE=${DATABASE_DB_NAME}
+  #     - MYSQL_USER=${DATABASE_USER}
+  #     - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+  #     - NODE_ENV=production
+  #   depends_on:
+  #     - database
+  #   links:
+  #     - database
