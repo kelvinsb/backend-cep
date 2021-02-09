@@ -1,7 +1,8 @@
-import '../config/env'
+import '../main/config/env'
 import express from 'express'
-import setup from '../config/setup'
-import routes from '../config/routes'
+
+import setup from '../main/config/setup'
+import routes from '../main/config/routes'
 
 const app = express()
 
