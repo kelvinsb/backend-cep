@@ -27,6 +27,10 @@ const findAddressOrCreate = async (cep, AddressesRepository) => {
 
   const { statusCode, body } = getAddressDetailsFromExternal
 
+  if (body.erro) {
+    throw new InternalServerError(1)
+  }
+
   if (statusCode === 200) {
     const entity = registerEntity(body, cep)
     const registerAddress = await AddressesRepository.insert(entity)
